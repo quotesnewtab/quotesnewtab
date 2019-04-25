@@ -1,0 +1,744 @@
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/abstracts/_variables.scss */
+:root {
+  --base-font: 'Varela Round', sans-serif;
+  --background-color: white;
+  --font-color: white;
+  --quote-font: 'Playfair Display';
+  --author-font: 'Source Sans Pro';
+  --text-align: left;
+  --color-base: #34495e;
+  --color-dark-white: #ecf0f1;
+  --color-green: #2ecc71;
+  --color-red: #e74c3c;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+body {
+  align-items: center;
+  background: var(--background-color);
+  color: var(--font-color);
+  display: flex;
+  font-family: var(--base-font);
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  width: 100vw;
+}
+
+/* line 15, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+a.link {
+  border-bottom: 2px solid transparent;
+  color: var(--font-color);
+  padding-bottom: 2px;
+  position: relative;
+  text-decoration: none;
+  top: 2px;
+  transition: border-color 0.25s ease;
+}
+
+/* line 24, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+a.link:hover {
+  border-color: var(--font-color);
+}
+
+/* line 30, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px 2px;
+}
+
+/* line 36, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+label:nth-child(n+2) {
+  margin-top: 10px;
+}
+
+/* line 40, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+label.toggle {
+  background: gray;
+  border-radius: 16px;
+  cursor: pointer;
+  display: block;
+  text-indent: -9999px;
+  height: 16px;
+  margin-top: 0;
+  position: relative;
+  width: 32px;
+}
+
+/* line 51, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+label.toggle::after {
+  background: #fff;
+  border-radius: 12px;
+  content: '';
+  height: 12px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  transition: 0.3s;
+  width: 12px;
+}
+
+/* line 64, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+label.toggle:active:after {
+  width: 18px;
+}
+
+/* line 70, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+input[type=checkbox] {
+  height: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+/* line 75, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+input[type=checkbox]:checked + label {
+  background: var(--color-green);
+}
+
+/* line 79, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+input[type=checkbox]:checked + label::after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+/* line 85, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+select {
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  font-family: var(--base-font);
+  font-size: 16px;
+  padding: 4px;
+  width: 100%;
+}
+
+/* line 95, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown {
+  width: 100%;
+}
+
+/* line 98, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-toggle {
+  align-items: center;
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: none;
+  color: var(--color-base);
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  width: 100%;
+}
+
+/* line 111, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper {
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+/* line 116, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper .dropdown-menu-container {
+  width: 226px;
+}
+
+/* line 119, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper .dropdown-menu-container .dropdown-list {
+  padding: 0;
+}
+
+/* line 124, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper .dropdown-menu-container .dropdown-list .dropdown-item.dropdown-selected .dropdown-link {
+  background: var(base);
+  color: var(--color-dark-white);
+}
+
+/* line 128, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper .dropdown-menu-container .dropdown-list .dropdown-item.dropdown-selected .dropdown-link:hover {
+  background: #1d81c0;
+}
+
+/* line 134, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper .dropdown-menu-container .dropdown-list .dropdown-item .dropdown-link {
+  color: var(--color-base);
+  padding: 5px 10px;
+}
+
+/* line 138, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper .dropdown-menu-container .dropdown-list .dropdown-item .dropdown-link:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* line 142, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_base.scss */
+.dropdown .dropdown-menu-wrapper .dropdown-menu-container .dropdown-list .dropdown-item .dropdown-link .dropdown-text {
+  pointer-events: none;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_layout.scss */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+/* line 10, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_layout.scss */
+.row#top-row, .row#bottom-row {
+  opacity: 0.5;
+  transition: opacity 0.25s ease;
+  user-select: none;
+}
+
+/* line 15, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_layout.scss */
+.row#top-row:hover, .row#bottom-row:hover {
+  opacity: 1;
+}
+
+/* line 20, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_layout.scss */
+.row#top-row {
+  padding-bottom: 30px;
+  top: 0;
+}
+
+/* line 25, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_layout.scss */
+.row#bottom-row {
+  bottom: 0;
+  padding-top: 30px;
+}
+
+/* line 30, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_layout.scss */
+.row .col {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-basis: 0;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+/* line 38, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_layout.scss */
+.row .col + .col {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+button, .info-btn, .share-btn {
+  background: transparent;
+  border: 2px solid var(--font-color);
+  border-radius: 4px;
+  color: var(--font-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--base-font);
+  padding: 2px 8px;
+  transition: all 0.25s ease;
+}
+
+/* line 12, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+button:hover, .info-btn:hover, .share-btn:hover {
+  background: var(--font-color);
+  color: var(--background-color);
+}
+
+/* line 17, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+button:focus, .info-btn:focus, .share-btn:focus {
+  outline: 0;
+}
+
+/* line 21, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+button svg, .info-btn svg, .share-btn svg {
+  height: 16px;
+  margin: 0 -2px 0 -4px;
+  position: relative;
+  top: 2px;
+}
+
+/* line 28, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+button span, .info-btn span, .share-btn span {
+  position: relative;
+  top: -1px;
+}
+
+/* line 34, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#settings-btn {
+  cursor: pointer;
+}
+
+/* line 37, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#settings-btn circle, #settings-btn path {
+  fill: transparent;
+  position: relative;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+/* line 44, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#settings-btn path {
+  z-index: 1;
+}
+
+/* line 50, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#settings-btn:hover circle, #settings-btn:hover path, #settings-btn.active circle, #settings-btn.active path {
+  fill: var(--background-color);
+}
+
+/* line 54, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#settings-btn:hover path, #settings-btn.active path {
+  fill: var(--font-color);
+}
+
+/* line 60, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#info-btn {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+/* line 64, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#info-btn circle, #info-btn #settings-btn path, #settings-btn #info-btn path, #info-btn line {
+  fill: transparent;
+  transition: all 0.25s ease;
+}
+
+/* line 70, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#info-btn:hover circle, #info-btn:hover #settings-btn path, #settings-btn #info-btn:hover path, #info-btn.active circle, #info-btn.active #settings-btn path, #settings-btn #info-btn.active path {
+  fill: var(--font-color);
+}
+
+/* line 74, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#info-btn:hover line, #info-btn.active line {
+  stroke: var(--background-color);
+}
+
+/* line 80, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#grid-btn {
+  cursor: pointer;
+}
+
+/* line 83, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#grid-btn rect {
+  fill: transparent;
+  transition: all 0.25s ease;
+}
+
+/* line 89, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+#grid-btn:hover rect, #grid-btn.active rect {
+  fill: var(--font-color);
+}
+
+/* line 95, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.info-btn {
+  border-color: var(--color-base);
+  color: var(--color-base);
+  margin: 4px 0 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+/* line 103, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.info-btn + .info-btn {
+  margin-left: 4px;
+}
+
+/* line 107, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.info-btn:hover {
+  background: var(--color-base);
+  color: white;
+}
+
+/* line 112, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.info-btn#donate {
+  display: block;
+  margin-left: 0;
+}
+
+/* line 118, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.share-btn {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* line 123, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.share-btn + .share-btn {
+  margin-left: 6px;
+}
+
+/* line 127, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.share-btn:hover {
+  background: var(--font-color);
+  color: var(--background-color);
+}
+
+/* line 131, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.share-btn:hover .icon {
+  fill: var(--background-color);
+  stroke: transparent;
+}
+
+/* line 137, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.share-btn .icon {
+  fill: var(--font-color);
+  height: 16px;
+  left: -2px;
+  margin-right: -6px;
+  position: relative;
+  stroke: transparent;
+  top: 2px;
+  transition: all 0.25s ease;
+}
+
+/* line 148, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_button.scss */
+.share-btn span {
+  position: relative;
+  top: -1px;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_offline.scss */
+#offline-notice {
+  display: none;
+  font-size: 16px;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.25s ease;
+  top: 10px;
+  width: 100%;
+}
+
+/* line 11, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_offline.scss */
+#offline-notice.show {
+  display: block;
+  opacity: 1;
+}
+
+/* line 16, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_offline.scss */
+#offline-notice svg {
+  height: 20px;
+  margin: 0 15px;
+  position: relative;
+  top: 5px;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/base/_popup.scss */
+.popup {
+  background: white;
+  border-radius: 4px;
+  color: var(--color-base);
+  padding: 15px;
+  position: absolute;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_background-image.scss */
+#background-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  transition: opacity 0.25s ease, background-image 0.25s ease-in-out;
+  width: 100%;
+}
+
+/* line 14, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_background-image.scss */
+#background-image.show {
+  visibility: visible;
+}
+
+/* line 19, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_background-image.scss */
+#background-image-loader {
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  transform: translateX(-500%);
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup {
+  bottom: 65px;
+  left: -350px;
+  text-align: center;
+  width: 275px;
+}
+
+/* line 7, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup.active {
+  left: 15px;
+}
+
+/* line 11, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup .label-row {
+  display: flex;
+}
+
+/* line 14, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup .label-row .col {
+  flex: 1;
+  text-align: center;
+}
+
+/* line 20, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup .btn-row {
+  display: flex;
+}
+
+/* line 23, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup .btn-row + .label-row {
+  margin-top: 10px;
+}
+
+/* line 27, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup .btn-row .info-btn {
+  flex: 1;
+}
+
+/* line 32, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup p {
+  margin-bottom: 25px;
+}
+
+/* line 36, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup #made-by {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 25px 0 5px;
+}
+
+/* line 41, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup #made-by #heart {
+  color: var(--color-red);
+  fill: var(--color-red);
+  height: 14px;
+  margin: 0 -3px;
+  position: relative;
+  top: 2px;
+}
+
+/* line 50, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup #made-by a {
+  color: var(--color-base);
+  padding-bottom: 1px;
+  top: 0;
+}
+
+/* line 55, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
+#info-popup #made-by a:hover {
+  border-color: var(--color-base);
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_quote.scss */
+#quote-wrapper {
+  position: relative;
+  transition: padding-top 0.25s ease;
+  width: 70%;
+  z-index: 1;
+}
+
+/* line 7, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_quote.scss */
+#quote-wrapper.top-sites-active {
+  padding-top: 10%;
+}
+
+/* line 11, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_quote.scss */
+#quote-wrapper #quote, #quote-wrapper #author {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* line 16, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_quote.scss */
+#quote-wrapper #quote {
+  color: var(--font-color);
+  font-family: var(--quote-font);
+  font-size: 3vw;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-align: var(--text-align);
+}
+
+/* line 25, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_quote.scss */
+#quote-wrapper #author {
+  color: var(--font-color);
+  font-family: var(--author-font);
+  font-size: 20px;
+  text-align: var(--text-align);
+}
+
+/* line 31, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_quote.scss */
+#quote-wrapper #author::before {
+  content: '\2014';
+  margin-right: 6px;
+}
+
+/* line 38, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_quote.scss */
+#suggestor {
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup {
+  bottom: 65px;
+  left: -300px;
+  width: 230px;
+}
+
+/* line 6, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup.active {
+  left: 15px;
+}
+
+/* line 10, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup .toggle-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 0;
+}
+
+/* line 16, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup .toggle-row + .toggle-row {
+  margin-bottom: 15px;
+}
+
+/* line 20, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup .toggle-row label {
+  cursor: pointer;
+}
+
+/* line 25, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup .color-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+/* line 30, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup .color-row .color {
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px white inset;
+  display: block;
+  height: 16px;
+  transition: border-color 0.25s ease;
+  width: 16px;
+}
+
+/* line 40, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup .color-row .color:hover {
+  border-color: lightgray;
+}
+
+/* line 44, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_settings.scss */
+#settings-popup .color-row .color.selected {
+  border-color: transparent;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_share.scss */
+.share {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* line 6, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_share.scss */
+.share.hide {
+  display: none;
+  opacity: 0;
+}
+
+/* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites {
+  display: flex;
+  max-width: 700px;
+  position: absolute;
+  top: 150px;
+  transform: scale(0);
+  transition: transform 0.25s ease;
+  width: 70%;
+  z-index: 2;
+}
+
+/* line 11, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites.active {
+  transform: scale(1);
+}
+
+/* line 15, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites .site {
+  color: var(--font-color);
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* line 23, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites .site:hover .logo {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* line 27, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites .site:hover .site-name {
+  color: var(--font-color);
+  opacity: 0.75;
+}
+
+/* line 33, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites .site + .site {
+  margin-left: 20px;
+}
+
+/* line 38, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites .logo {
+  align-items: center;
+  background: gray;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100%;
+  transition: box-shadow 0.25s ease;
+  width: 100%;
+}
+
+/* line 51, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites .logo span {
+  color: white;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: -100%;
+  opacity: 0.5;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* line 62, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_top-sites.scss */
+#top-sites .site-name {
+  font-size: 12px;
+  font-weight: 600;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  margin-top: 10px;
+  opacity: 0.5;
+  overflow-wrap: break-word;
+  transition: opacity 0.25s ease;
+  user-select: none;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/*# sourceMappingURL=../main.map */

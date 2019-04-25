@@ -1,0 +1,43 @@
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	height: 70px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+
+	&#top-row, &#bottom-row {
+		opacity: 0.5;
+		transition: opacity 0.25s ease;
+		user-select: none;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&#top-row {
+		padding-bottom: 30px;
+		top: 0;
+	}
+
+	&#bottom-row {
+		bottom: 0;
+		padding-top: 30px;
+	}
+
+	.col {
+		align-items: center;
+		display: flex;
+		flex: 1;
+		flex-basis: 0;
+		font-size: 16px;
+		padding: 0 20px;
+
+		+ .col {
+			flex: 0 0 auto;
+			width: auto;
+		}
+	}
+}

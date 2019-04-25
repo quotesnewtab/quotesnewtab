@@ -1,0 +1,152 @@
+button {
+	background: transparent;
+	border: 2px solid var(--font-color);
+	border-radius: 4px;
+	color: var(--font-color);
+	cursor: pointer;
+	font-size: 16px;
+	font-family: var(--base-font);
+	padding: 2px 8px;
+	transition: all 0.25s ease;
+
+	&:hover {
+		background: var(--font-color);
+		color: var(--background-color);
+	}
+
+	&:focus {
+		outline: 0;
+	}
+
+	svg {
+		height: 16px;
+		margin: 0 -2px 0 -4px;
+		position: relative;
+		top: 2px;
+	}
+
+	span {
+		position: relative;
+		top: -1px;
+	}
+}
+
+#settings-btn {
+	cursor: pointer;
+
+	circle {
+		fill: transparent;
+		position: relative;
+		transition: all 0.25s ease;
+		z-index: 2;
+	}
+
+	path {
+		@extend circle;
+		z-index: 1;
+	}
+
+	&:hover, &.active {
+		circle {
+			fill: var(--background-color);
+		}
+
+		path {
+			fill: var(--font-color);
+		}
+	}
+}
+
+#info-btn {
+	cursor: pointer;
+	margin: 0 10px;
+
+	circle, line {
+		fill: transparent;
+		transition: all 0.25s ease;
+	}
+
+	&:hover, &.active {
+		circle {
+			fill: var(--font-color);
+		}
+
+		line {
+			stroke: var(--background-color);
+		}
+	}
+}
+
+#grid-btn {
+	cursor: pointer;
+
+	rect {
+		fill: transparent;
+		transition: all 0.25s ease;
+	}
+
+	&:hover, &.active {
+		rect {
+			fill: var(--font-color);
+		}
+	}
+}
+
+.info-btn {
+	@extend button;
+	border-color: var(--color-base);
+	color: var(--color-base);
+	margin: 4px 0 5px;
+	position: relative;
+	text-decoration: none;
+
+	+ .info-btn {
+		margin-left: 4px;
+	}
+
+	&:hover {
+		background: var(--color-base);
+		color: white;
+	}
+
+	&#donate {
+		display: block;
+		margin-left: 0;
+	}
+}
+
+.share-btn {
+	@extend button;
+	margin-left: 10px;
+	text-decoration: none;
+
+	+ .share-btn {
+		margin-left: 6px;
+	}
+
+	&:hover {
+		background: var(--font-color);
+		color: var(--background-color);
+
+		.icon {
+			fill: var(--background-color);
+			stroke: transparent;
+		}
+	}
+
+	.icon {
+		fill: var(--font-color);
+		height: 16px;
+		left: -2px;
+		margin-right: -6px;
+		position: relative;
+		stroke: transparent;
+		top: 2px;
+		transition: all 0.25s ease;
+	}
+
+	span {
+		position: relative;
+		top: -1px;
+	}
+}

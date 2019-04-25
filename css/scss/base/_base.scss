@@ -1,0 +1,150 @@
+body {
+	align-items: center;
+	background: var(--background-color);
+	color: var(--font-color);
+	display: flex;
+	font-family: var(--base-font);
+	height: 100vh;
+	justify-content: center;
+	overflow: hidden;
+	transition: all 0.25s ease;
+	width: 100vw;
+}
+
+a {
+	&.link {
+		border-bottom: 2px solid transparent;
+		color: var(--font-color);
+		padding-bottom: 2px;
+		position: relative;
+		text-decoration: none;
+		top: 2px;
+		transition: border-color 0.25s ease;
+
+		&:hover {
+			border-color: var(--font-color);
+		}
+	}
+}
+
+label {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 2px 2px;
+
+	&:nth-child(n+2) {
+		margin-top: 10px;
+	}
+
+	&.toggle {
+		background: gray;
+		border-radius: 16px;
+		cursor: pointer;
+		display: block;
+		text-indent: -9999px;
+		height: 16px;
+		margin-top: 0;
+		position: relative;
+		width: 32px;
+
+		&::after {
+			$toggle-after-size: 12px;
+			background: #fff;
+			border-radius: $toggle-after-size;
+			content: '';
+			height: $toggle-after-size;
+			left: 2px;
+			position: absolute;
+			top: 2px;
+			transition: 0.3s;
+			width: $toggle-after-size;
+		}
+
+		&:active:after {
+			width: 18px;
+		}
+	}
+}
+
+input[type=checkbox] {
+	height: 0;
+	visibility: hidden;
+	width: 0;
+
+	&:checked + label {
+		background: var(--color-green);
+	}
+
+	&:checked + label::after {
+		left: calc(100% - 2px);
+		transform: translateX(-100%);
+	}
+}
+
+select {
+	border: 2px solid lightgray;
+	border-radius: 4px;
+	font-family: var(--base-font);
+	font-size: 16px;
+	padding: 4px;
+	width: 100%;
+}
+
+// Custom dropdown
+.dropdown {
+	width: 100%;
+	
+	.dropdown-toggle {
+		align-items: center;
+		border: 2px solid lightgray;
+		border-radius: 4px;
+		box-sizing: border-box;
+		box-shadow: none;
+		color: var(--color-base);
+		display: flex;
+		justify-content: space-between;
+		padding: 4px 8px;
+		width: 100%;
+	}
+	
+	.dropdown-menu-wrapper {
+		border: 2px solid lightgray;
+		border-radius: 4px;
+		box-shadow: none;
+		
+		.dropdown-menu-container {
+			width: 226px;
+			
+			.dropdown-list {
+				padding: 0;
+
+				.dropdown-item {
+					&.dropdown-selected {
+						.dropdown-link {
+							background: var(base);
+							color: var(--color-dark-white);
+
+							&:hover {
+								background: #1d81c0;
+							}
+						}
+					}
+
+					.dropdown-link {
+						color: var(--color-base);
+						padding: 5px 10px;
+
+						&:hover {
+							background: rgba(0, 0, 0, 0.07)
+						}
+
+						.dropdown-text {
+							pointer-events: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

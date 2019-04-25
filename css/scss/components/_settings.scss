@@ -1,0 +1,49 @@
+#settings-popup {
+	bottom: 65px;
+	left: -300px;
+	width: 230px;
+
+	&.active {
+		left: 15px;
+	}
+
+	.toggle-row {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin: 15px 0 0;
+
+		+ .toggle-row {
+			margin-bottom: 15px;
+		}
+
+		label {
+			cursor: pointer;
+		}
+	}
+
+	.color-row {
+		display: flex;
+		justify-content: space-between;
+		margin: 5px 0;
+
+		.color {
+			$color-block-size: 16px;
+			cursor: pointer;
+			border: 2px solid white;
+			box-shadow: 0 0 0 2px white inset;
+			display: block;
+			height: $color-block-size;
+			transition: border-color 0.25s ease;
+			width: $color-block-size;
+
+			&:hover {
+				border-color: lightgray;
+			}
+
+			&.selected {
+				border-color: transparent;
+			}
+		}
+	}
+}

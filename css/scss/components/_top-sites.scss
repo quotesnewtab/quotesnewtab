@@ -1,0 +1,75 @@
+#top-sites {
+	display: flex;
+	max-width: 700px;
+	position: absolute;
+	top: 150px;
+	transform: scale(0);
+	transition: transform 0.25s ease;
+	width: 70%;
+	z-index: 2;
+
+	&.active {
+		transform: scale(1);
+	}
+
+	.site {
+		color: var(--font-color);
+		cursor: pointer;
+		flex: 1;
+		text-align: center;
+		text-decoration: none;
+
+		&:hover {
+			.logo {
+				box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.35);
+			}
+
+			.site-name {
+				color: var(--font-color);
+				opacity: 0.75;
+			}
+		}
+
+		+ .site {
+			margin-left: 20px;
+		}
+	}
+
+	.logo {
+		align-items: center;
+		background: gray;
+		background-position: center center;
+		background-size: cover;
+		border-radius: 4px;
+		box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+		display: flex;
+		justify-content: center;
+		padding-bottom: 100%;
+		transition: box-shadow 0.25s ease;
+		width: 100%;
+
+		span {
+			color: white;
+			font-size: 40px;
+			font-weight: 900;
+			margin-bottom: -100%;
+			opacity: 0.5;
+			text-transform: uppercase;
+			user-select: none;
+		}
+	}
+
+	.site-name {
+		font-size: 12px;
+		font-weight: 600;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+		margin-top: 10px;
+		opacity: 0.5;
+		overflow-wrap: break-word;
+		transition: opacity 0.25s ease;
+		user-select: none;
+		word-break: break-word;
+		word-wrap: break-word;
+	}
+}

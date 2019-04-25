@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Tab</title>
+	<link rel="stylesheet" type="text/css" href="css/dropdown.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+</head>
+<body>
+	<img src="" alt="" id="background-image-loader">
+	<div id="background-image" class="show"></div>
+	<div id="top-row" class="row">
+		<div class="col">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid btn" id="grid-btn"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+		</div>
+		<div class="col">
+			<p class="share">Share on:</p>
+			<a href="" id="twitter" class="share share-btn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter icon" id="twitter-icon"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+				<span>Twitter</span>
+			</a>
+			<a href="" id="facebook" class="share share-btn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook icon" id="facebook-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+	</div>
+
+	<p id="offline-notice"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wifi-off"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>It seems that you have no internet connection. No worries, we stored some quotes offline for you.<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wifi-off"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg></p>
+
+	<div id="top-sites" class=""></div>
+
+	<div id="quote-wrapper">
+		<h1 id="quote"></h1>
+		<p id="author"></p>
+	</div>
+
+	<div id="bottom-row" class="row">
+		<div class="col">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings popup-toggle" id="settings-btn" data-popup="settings-popup"><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info btn popup-toggle" id="info-btn" data-popup="info-popup"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+			<button id="new-quote">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+				<span>New quote</span>
+			</button>
+			<p id="suggestor"></p>
+		</div>
+		<div class="col">
+			<a class="link" href="mailto:quotes@emilcarlsson.se?subject=Quote%20Suggestion%20&ndash;%20Quotes%20New%20Tab">Want to suggest a quote?</a>
+		</div>
+	</div>
+
+	<div class="popup" id="info-popup">
+		<div class="label-row">
+			<div class="col">
+				<span class="btn-label">Feature suggestion?</span>
+			</div>
+			<div class="col">
+				<span class="btn-label">Found a bug?</span>
+			</div>
+		</div>
+		<div class="btn-row">
+			<a href="mailto:quotes@emilcarlsson.se?subject=Feature%20Suggestion%20&ndash;%20Quotes%20New%20Tab" id="suggestion" class="info-btn">Send it</a>
+			<a href="mailto:quotes@emilcarlsson.se?subject=Bug%20Report%20&ndash;%20Quotes%20New%20Tab" id="bug" class="info-btn">Report it</a>
+		</div>
+
+		<div class="label-row">
+			<div class="col">
+				<span class="btn-label">Want to donate?</span>
+			</div>
+		</div>
+		<a href="https://www.paypal.me/CarlssonEmil" id="donate" class="info-btn">Donate</a>
+		<p>Donations are greatly appreciated and<br />will be used to further develop this<br />extension with your suggestions in mind.</p>
+		<p id="made-by">Made with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart" id="heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> by <a href="https://emilcarlsson.se/" class="link">Emil Carlsson</a>.<br />Icons by <a href="https://feathericons.com/" class="link">Feather Icons</a>.</p>
+	</div>
+
+	<div class="popup" id="settings-popup">
+		<label for="quote-font-select">Quote Font</label>
+		<select id="quote-font-select" class="font-select" data-context="quote"></select>
+
+		<label for="author-font-select">Author Font</label>
+		<select id="author-font-select" class="font-select" data-context="author"></select>
+
+		<label>Quote Font Size</label>
+		<input type="range" name="">
+
+		<label>Author Font Size</label>
+		<input type="range" name="">
+
+		<div class="toggle-row">
+			<label for="top-sites-toggle">Always show top sites</label>
+			<input type="checkbox" id="top-sites-toggle" class="settings-toggle" data-context="top-sites">
+			<label for="top-sites-toggle" class="toggle"></label>
+		</div>
+
+		<div class="toggle-row">
+			<label for="background-toggle">Show background image</label>
+			<input type="checkbox" id="background-toggle" class="settings-toggle" data-context="background" checked>
+			<label for="background-toggle" class="toggle"></label>
+		</div>
+
+		<div class="toggle-row">
+			<label for="auto-refresh-quote-toggle">Auto-refresh new quotes</label>
+			<input type="checkbox" id="auto-refresh-quote-toggle" class="settings-toggle" data-context="auto-refresh">
+			<label for="auto-refresh-quote-toggle" class="toggle"></label>
+		</div>
+
+		<label>Choose background color</label>
+		<div class="color-row" id="background-color-list"></div>
+
+		<label>Choose font color</label>
+		<div class="color-row" id="font-color-list"></div>
+	</div>
+
+	<!-- release -->
+	<!--
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.dropdown.min.js"></script>
+	<script src="js/webfont.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/twitter-widgets.js"></script>
+	-->
+
+	<!-- dev -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.dropdown.min.js"></script>
+	<script src="js/constants.js"></script>
+	<script src="js/webfont.js"></script>
+	<script src="js/func.js"></script>
+	<script src="js/available-logotypes.js"></script>
+	<script src="js/mostvisited.js"></script>
+	<script src="js/twitter-widgets.js"></script>
+</body>
+</html>
