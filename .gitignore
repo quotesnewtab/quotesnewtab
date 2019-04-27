@@ -3,3 +3,5 @@
 /logotypes
 /publish
 /screenshots
+node_modules
+.env
