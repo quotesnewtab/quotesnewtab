@@ -268,7 +268,7 @@ function checkSettings() {
  * @param {Object} defaultSettings - The default settings (Defined in checkSettings())
  */
 function storeSettings(defaultSettingsObject) {
-    defaultSettings = defaultSettingsObject || new Object({});
+    //defaultSettings = defaultSettingsObject || new Object({});
 
     quoteFont = defaultSettings.quoteFont || $("#quote-font-select option:selected").val();
     authorFont = defaultSettings.authorFont || $("#author-font-select option:selected").val();
@@ -278,16 +278,15 @@ function storeSettings(defaultSettingsObject) {
     backgroundColor = defaultSettings.backgroundColor || $("#background-color-list").find(".selected").attr("data-color");
     fontColor = defaultSettings.fontColor || $("#font-color-list").find(".selected").attr("data-color");
     
-    var data =
-            {
-                quoteFont: quoteFont,
-                authorFont: authorFont,
-                alwaysShowTopSites: alwaysShowTopSites,
-                showBackgroundImage: showBackgroundImage,
-                autoRefreshQuote: autoRefreshQuote,
-                backgroundColor: backgroundColor,
-                fontColor: fontColor
-            };
+    var data = {
+        quoteFont: quoteFont,
+        authorFont: authorFont,
+        alwaysShowTopSites: alwaysShowTopSites,
+        showBackgroundImage: showBackgroundImage,
+        autoRefreshQuote: autoRefreshQuote,
+        backgroundColor: backgroundColor,
+        fontColor: fontColor
+    };
     
     localStorage.setItem("settings", JSON.stringify(data));
 }
@@ -299,7 +298,7 @@ function fetchQuote() {
     // Checking if internet connection exists
     if (navigator.onLine) {
         $.ajax({
-            url: "https://d6ebctiu66.execute-api.eu-central-1.amazonaws.com/prod",
+            url: "https://api.quotesnewtab.com/v1/quotes/random",
             dataType: 'json',
             success: function (result) {
                 // Set HTML-text for quote and author
@@ -310,21 +309,24 @@ function fetchQuote() {
                 }, 250);
 
                 // Show suggestor if there is one
-                if (result.suggestor !== undefined) {
-                    $("#suggestor").html("Quote suggested by " + result.suggestor);
+                if (result.submitter !== undefined) {
+                    $("#suggestor").html("Quote submitted by " + result.submitter);
                     setTimeout(function() {
                         $("#suggestor").css("opacity", "1");
                     }, 250);
                 }
 
                 // Fetch image of author
-                $("#background-image-loader").attr("src", "https://s3.eu-central-1.amazonaws.com/quotesnewtab/"+convertAuthorName(result.author)+".jpg");
+                $("#background-image-loader").attr("src", "https://quotesnewtab.com/assets/authors/"+convertAuthorName(result.author)+".jpg");
 
                 // Generate twitter intent URL
                 $("#twitter").attr("href", "https://twitter.com/intent/tweet?text=" + encodeURIComponent('"' + result.quote + '" – ' + result.author) + "&via=QuotesNewTab");
 
                 // Generate facebook share URL
                 $("#facebook").attr("href", "https://www.facebook.com/dialog/share?app_id=1796316614011305&display=popup&href=https://chrome.google.com/webstore/detail/quotes-new-tab/fnhpicigolcacikdjdocmkfnplmefadg&quote=" + encodeURIComponent('"' + result.quote + '" – ' + result.author));
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                fetchOfflineQuote();
             }
         });
     } else {
