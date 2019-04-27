@@ -39,7 +39,7 @@ Quotes New Tab is a Chrome extension that replaces your new tab with a minimalis
 
 ## About
 
-The extension is powered by [our very own API](https://quotesnewtab.com/api/docs), keeping it lightweight and fast. Only a dozen quotes and images are packaged with the extension itself for offline functionality.
+The extension is built with [Vue.js](https://vuejs.org/) and powered by [our very own API](https://quotesnewtab.com/api/docs), keeping it lightweight and fast. Only a dozen quotes and images are packaged with the extension itself for offline functionality.
 
 ## Want to submit a quote?
 
