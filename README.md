@@ -17,7 +17,7 @@
   <img src="https://img.shields.io/badge/size-403kb-blue.svg" alt="Extension Size">
   <img src="https://img.shields.io/chrome-web-store/users/fnhpicigolcacikdjdocmkfnplmefadg.svg" alt="Chrome Webstore Users">
   <img src="https://img.shields.io/chrome-web-store/rating/fnhpicigolcacikdjdocmkfnplmefadg.svg" alt="Chrome Webstore Rating">
-  <img src="https://img.shields.io/badge/version-v2.0.0-blue.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-v1.11.0-blue.svg" alt="Version">
   <br>
   <br>
 </p>
