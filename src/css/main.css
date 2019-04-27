@@ -467,6 +467,7 @@ button span, .info-btn span, .share-btn span {
 /* line 1, C:/Users/e605239/Dropbox/Web/New Tabs/Quotes New Tab 1.0/css/scss/components/_information.scss */
 #info-popup {
   bottom: 65px;
+  font-size: 12px;
   left: -350px;
   text-align: center;
   width: 275px;
