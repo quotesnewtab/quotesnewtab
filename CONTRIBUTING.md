@@ -29,6 +29,7 @@ restrictions:
 Our bug tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
 * `bug` - Issues that are identifying a bug.
+* `dev` - Issues that are for development purposes, generally created by the developer.
 * `docs` - Issues for improving or updating our documentation.
 * `duplicate` - Issues that already exist.
 * `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified.
